@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pokédex</title>
+  <link rel="icon" href="gengar.png">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>      
+
+  <div class="pokedex-container">
+    
+    <img src="./pokedex final.png" alt="Pokedex" class="pokedex-imagem">
+
+    <div class="tela">
+      
+      <div class="barra-superior">
+        <div class="titulo">
+          <span class="numero_pokemon" id="numeroPokemon">#</span>
+          <span class="nome_pokemon" id="nomePokemon">—</span>
+        </div>
+      
+        <div class="abas">
+          <button class="aba ativa" data-aba="lista">Lista</button>
+          <button class="aba" data-aba="detalhes">Status</button>
+          <button class="aba" data-aba="favoritos">Equipe</button>
+          <button id="botaoTema" class="tema-escuro">Alterar Tema</button>
+        </div>
+      </div>
+
+      <div class="conteudo">
+        
+        <div class="controles">
+          <form class="form-busca" id="formularioBusca">
+            <input id="campoBusca" class="campo_busca" type="text" placeholder="Nome ou N°" />
+            <button class="botao_buscar" type="submit">🔍</button>
+          </form>
+        </div>
+
+        <div class="visao" id="visao-lista">
+          <ul class="lista_pokemons" id="lista_pokemons"></ul>
+          <div class="acoes-lista">
+            <button id="carregarMais" class="pequeno">Mostrar mais</button>
+          </div>
+        </div>
+
+        <div class="visao oculto" id="visao-detalhes">
+          <div class="detalhes">
+            <div class="sprite_detalhe">
+              <img id="imagem-detalhe" src="" alt="sprite">
+            </div>
+            <div class="info_detalhe">
+              <p><strong>Tipos:</strong> <span id="textoTipos"></span></p>
+              <p><strong>Habilidades:</strong> <span id="textoHabilidades"></span></p>
+              <p><strong>Altura:</strong> <span id="textoAltura"></span> | <strong>Peso:</strong> <span id="textoPeso"></span></p>
+
+              <h4>Status</h4>
+              <ul class="lista_status" id="listaStatus"></ul>
+
+              <div class="acoes_detalhe">
+                <button id="botaoFavoritar" class="pequeno">Adicionar a equipe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visao oculto" id="visao-favoritos">
+          <ul class="lista_favoritos" id="lista_favoritos"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

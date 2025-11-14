@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Fredoka",system-ui,sans-serif;
+  background:linear-gradient(to bottom,#1871c9,#ffffff);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  min-height:100vh;
+  padding:24px;
+}
+
+body.modo-escuro {
+  background: linear-gradient(to bottom, #0d0d0d, #740a70);
+}
+
+#botaoTema {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.pokedex-container{
+  position:relative;
+  width:360px;
+  max-width:92vw;
+  border:3px solid #111;
+}
+
+.pokedex-imagem{
+  width:100%;
+  height:auto;
+  display:block;
+  user-select:none;
+}
+
+.tela{
+  position:absolute;
+  left:8.5%;
+  top:19.5%;
+  width:83%;
+  height:68%;
+  background:transparent; 
+  z-index:10;
+  color:#111;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:8px 10px;
+  overflow:hidden;
+}
+
+.barra-superior{
+  display:flex;
+  justify-content:space-between;
+  align-items:center ;
+  gap: 3px;
+}
+
+.titulo{
+  text-align:left;
+}
+
+.numero_pokemon{
+  display:block;
+  font-weight:700;
+  font-size:12px
+}
+
+.nome_pokemon{
+  display:block;
+  font-weight:800;
+  font-size:16px;
+  text-transform:capitalize
+}
+
+.abas{display:flex;gap:6px}
+
+.aba{
+  background:rgba(255,255,255,0.95);
+  border:2px solid #111;
+  padding:6px 8px;
+  border-radius:6px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.aba.ativa{
+  background:#ffd;
+  color:#111; 
+  box-shadow: -2px 2px 0 #111
+}
+
+.conteudo{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  overflow:hidden;
+}
+
+.controles{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.form-busca{
+  flex:1;
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+
+.campo_busca{
+  flex:1;
+  padding:8px 10px;
+  border-radius:8px;
+  border:2px solid #111;
+  font-weight:600;
+  font-size:13px;
+}
+
+.botao_buscar{
+  padding:6px 6px;
+  border-radius:8px;
+  border:2px solid #111;
+  background:#ffd;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.botao_navegacao{
+  background:#ffd;
+  border:2px solid #111;
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.visao{
+  flex:1;
+  overflow:auto;
+  padding-right:6px;
+}
+
+.oculto{
+  display:none;
+}
+
+.lista_pokemons{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding-bottom:6px;
+}
+
+.lista_pokemons li{
+  background:#fff;
+  padding:8px;
+  border-radius:8px;
+  border:2px solid #111;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  box-shadow:-2px 2px 0 #111;
+}
+
+.lista_pokemons img{
+  width:48px;
+  height:auto;
+}
+
+.acoes-lista{
+  display:flex;
+  justify-content:center;
+  padding-top:6px;
+}
+
+.pequeno{
+  background:#2b7cff;
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+  border:2px solid #111;
+}
+
+.detalhes{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+}
+
+.sprite_detalhe img{
+  width:96px;
+  height:auto;
+  border-radius:6px;
+  border:2px solid #111;
+  background:#fff;
+  padding:4px;
+}
+
+.info_detalhe{
+  flex:1;
+}
+
+.lista_status{
+  list-style:none;
+  padding:0;
+  margin-top:6px;
+}
+
+.lista_status li{
+  background:#fff;
+  padding:6px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  margin-bottom:6px;
+}
+
+.lista_favoritos{
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.lista_favoritos li{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px;
+  border-radius:8px;
+  border:2px solid #111;
+  background:#ffffff;
+  box-shadow:-2px 2px 0 #111;
+}
+
+.lista_favoritos img{
+  width:48px;
+}
+
+.visao::-webkit-scrollbar{width:8px}
+.visao::-webkit-scrollbar-thumb{background:#222;border-radius:6px}
+
+@media (max-width:420px){
+  .pokedex-container{width:320px}
+  .sprite_detalhe img{width:76px}
+  .nome_pokemon{font-size:14px}
+  .numero_pokemon{font-size:11px}
+}
